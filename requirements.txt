@@ -1,0 +1,12 @@
+# --- Core & Validação ---
+pydantic>=2.0.0
+pydantic-settings
+
+# --- HTTP Client (API) ---
+httpx
+
+# --- Manipulação de Arquivos (Excel) ---
+openpyxl
+
+# --- Resiliência (Retries) ---
+tenacity
