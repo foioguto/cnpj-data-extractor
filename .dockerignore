@@ -1,4 +1,29 @@
-.git
-__pycache__
+# --- Dependências e Ambiente Local ---
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Git e Controle de Versão ---
+.git/
+.gitignore
+
+# --- Configurações de IDE ---
+.vscode/
+.idea/
+
+# --- Arquivos Sensíveis (SEGURANÇA!) ---
 .env
-node_modules
+.env.local
+
+# --- Docker ---
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# --- Logs e Arquivos Temporários ---
+*.log
+temp/
