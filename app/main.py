@@ -8,6 +8,7 @@ def main():
     FILE_NAME = config.file_name
     CNPJ_COLUMN = config.cnpj_column
     START_ROW = config.start_row
+    COLUMNS = config.columns
 
     print("🚀 Starting Automation Pipeline...")
     
@@ -27,7 +28,7 @@ def main():
             company_data = service.fetch_company_data(cnpj)
             
             # 2. Update Excel (in memory)
-            excel.update_row(row_num, company_data)
+            excel.update_row(row_num, company_data, COLUMNS)
             
             records_processed += 1
             

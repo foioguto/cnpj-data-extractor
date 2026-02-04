@@ -5,6 +5,8 @@ class Config:
     file_name: str
     cnpj_column: str
     start_row: int
+    fields_map: list[str]
+    columns: list[int]
 
 
 config = Config(
@@ -14,5 +16,7 @@ config = Config(
 
     start_row=2,
 
-    fields_map = ["razao_social", "descricao_situacao_cadastral", "uf"]
+    fields_map = ["razao_social", "descricao_situacao_cadastral", "uf"],
+
+    columns = [1, 1, 1, 1]
 )
