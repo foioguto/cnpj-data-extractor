@@ -41,4 +41,5 @@ Thumbs.db
 *.pid
 
 # Data
-data/
+/data/*
+!/data/.gitkeep
