@@ -9,5 +9,5 @@ services:
     env_file:
       - .env
     volumes:
-      - .:/app
+      - .:/cnpj-data-extractor
     restart: on-failure

@@ -1,5 +1,8 @@
 from dataclasses import dataclass
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 @dataclass(frozen=True)
 class Config:
     file_name: str
@@ -9,14 +12,21 @@ class Config:
     columns: list[int]
 
 
+def get_env_or_fail(key: str) -> str:
+    value = os.getenv(key)
+    if value is None:
+        raise RuntimeError(f"Missing environment variable: {key}")
+    return value
+
+
 config = Config(
-    file_name="dados.xlsx",
+    file_name = get_env_or_fail('FILE_NAME'),
 
-    cnpj_column="A",
+    cnpj_column = get_env_or_fail('CNPJ_COLUMN'),
 
-    start_row=2,
+    start_row = int(get_env_or_fail('START_ROW')),
 
-    fields_map = ["razao_social", "descricao_situacao_cadastral", "uf"],
+    fields_map = get_env_or_fail('FIELDS_MAP').split(","),
 
-    columns = [1, 1, 1, 1]
+    columns = [int(x) for x in get_env_or_fail('COLUMNS').split(",")]
 )

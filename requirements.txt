@@ -10,3 +10,5 @@ openpyxl
 
 # --- Resiliência (Retries) ---
 tenacity
+
+dotenv
